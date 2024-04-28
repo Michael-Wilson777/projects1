@@ -8,10 +8,10 @@ let evaluate = document.querySelector('#evaluate');
 
 
 
-// Calculator Display
+
 let realTimeScreenValue = []
 
-// To Clear
+
 
 clearbtn.addEventListener("click", () => {
 
