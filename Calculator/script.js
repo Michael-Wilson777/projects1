@@ -1,4 +1,4 @@
-// Variables
+
 let currentInput = document.querySelector('.currentInput');
 let answerScreen = document.querySelector('.answerScreen');
 let buttons = document.querySelectorAll('button');
@@ -8,10 +8,10 @@ let evaluate = document.querySelector('#evaluate');
 
 
 
-// Calculator Display
+
 let realTimeScreenValue = []
 
-// To Clear
+
 
 clearbtn.addEventListener("click", () => {
 
@@ -22,7 +22,6 @@ clearbtn.addEventListener("click", () => {
     answerScreen.style.color = " rgba(150, 150, 150, 0.87)";
 })
 
-// Get value of any button clicked and display to the screen
 
 buttons.forEach((btn) => {
 
@@ -43,21 +42,20 @@ buttons.forEach((btn) => {
 
         }
 
-        // When erase button is clicked
         if (btn.id.match('erase')) {
             realTimeScreenValue.pop();
             currentInput.innerHTML = realTimeScreenValue.join('');
             answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
         }
 
-        // When clicked button is evaluate button
+        
         if (btn.id.match('evaluate')) {
             currentInput.className = 'answerScreen';
             answerScreen.className = 'currentInput';
             answerScreen.style.color = "white";
         }
 
-        // To prevent undefined error in screen
+        
         if (typeof eval(realTimeScreenValue.join('')) == 'undefined') {
             answerScreen.innerHTML = 0
         }
